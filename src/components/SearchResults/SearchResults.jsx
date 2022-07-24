@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './SearchResults.scss'
 
+import SearchBar from '../SearchBar/SearchBar'
+
 import TrackList from '../TrackList/TrackList'
 
 class SearchResults extends React.Component {
@@ -10,11 +12,13 @@ class SearchResults extends React.Component {
     return (
       <div className="SearchResults">
         <h2>Results</h2>
-        <TrackList
-          tracks={this.props.searchResults}
-          onAdd={this.props.onAdd}
-          isRemoval={false}
-        />
+        <div className="results">
+          <TrackList
+            tracks={this.props.searchResults}
+            onAdd={this.props.onAdd}
+            isRemoval={false}
+          />
+        </div>
       </div>
     )
   }

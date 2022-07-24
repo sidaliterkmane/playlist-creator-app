@@ -1,17 +1,42 @@
+#root {
+    cursor: default;
+}
+
 .Track {
+    min-height: 100px;
     display: flex;
+    gap: 1rem;
     align-items: center;
-    border-bottom: 1px solid rgba(256, 256, 256, 0.8);
+
+    border-bottom: 1px solid rgb(56, 56, 56);
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-top: 0;
+    transition: 0.1s ease;
+
+    &:hover {
+        border-bottom: none;
+        background-color: rgb(56, 56, 56);
+        border-radius: 3px;
+    }
+
+    img {
+        margin-top: 9px;
+        width: 65px;
+        height: 65px;
+
+        border-radius: 3px;
+    }
 }
 
 .Track-action {
+    margin-top: 9px;
     cursor: pointer;
-    padding: .5rem;
-    font-size: 1.05rem;
-    transition: color .25s;
-    border: 0px;
     background-color: rgba(0, 0, 0, 0);
     color: #fff;
+    border: none;
+
+    transition: 0.5s ease;
 }
 
 .Track-action:hover {
@@ -27,7 +52,9 @@
 }
 
 .Track-information h3 {
-    margin-bottom: .22rem;
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .Track-information p {

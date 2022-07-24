@@ -1,4 +1,4 @@
-const clientId = process.env.CLIENT_ID;
+const clientId = '';
 const redirectUri = 'http://localhost:3000/';
 let accessToken;
 
@@ -47,6 +47,7 @@ const Spotify = {
                     name: track.name,
                     artist: track.artists[0].name,
                     album: track.album.name,
+                    image: track.album.images[2].url,
                     uri: track.uri
                 }));
             })

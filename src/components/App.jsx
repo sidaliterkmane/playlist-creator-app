@@ -9,6 +9,8 @@ import Playlist from './Playlist/Playlist'
 import logo from '../assets/logo.png'
 
 import Spotify from '../util/Spotify';
+import SpotifyLogo from '../assets/spotify.png';
+import github from '../assets/github.svg';
 
 class App extends React.Component {
   constructor(props) {
@@ -68,13 +70,19 @@ class App extends React.Component {
     return (
       <div className='body-container'>
         <div className="body">
-          <div className="logo">
-            <img src={ logo } />
-            <h1>Spoti<span className="highlight">list</span></h1>
-          </div>
+          <nav>
+            <div className="logo">
+              <img src={logo} />
+              <h1>Spoti<span className="highlight">list</span></h1>
+            </div>
+            <div className="made-for">
+              <p>made for</p>
+              <img src={SpotifyLogo}/>
+            </div>
+          </nav>
 
           <div className="App">
-            <SearchBar onSearch={this.search}/>
+            <SearchBar onSearch={this.search} />
             <div className="App-playlist">
               <SearchResults
                 searchResults={this.state.searchResults}
@@ -89,6 +97,13 @@ class App extends React.Component {
               />
             </div>
           </div>
+
+          <footer>
+            <div className="footer-content">
+              <p>Spotilist 2022 - Developed by <a href="https://sidaliterkmane.com" target='_blank'>Sid Ali Terkmane</a></p>
+              <a href="https://github.com/sidaliterkmane/playlist-creator-app"><img src={github} className="git"/></a>
+            </div>
+          </footer>
         </div>
       </div>
     )
