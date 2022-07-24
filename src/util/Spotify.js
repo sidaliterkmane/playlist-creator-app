@@ -1,4 +1,4 @@
-const clientId = '18246743081146d8a6322abbf452d060';
+const clientId = process.env.CLIENT_ID;
 const redirectUri = 'http://localhost:3000/';
 let accessToken;
 
