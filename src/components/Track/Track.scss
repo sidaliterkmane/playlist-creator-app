@@ -18,6 +18,10 @@
         border-bottom: none;
         background-color: rgb(56, 56, 56);
         border-radius: 3px;
+
+        .media-action {
+            opacity: 1;
+        }
     }
 
     img {
@@ -36,11 +40,15 @@
     color: #fff;
     border: none;
 
-    transition: 0.5s ease;
+    transition: 0.1s ease;
 }
 
 .Track-action:hover {
-    color: rgba(265, 265, 265, .5);
+    color: rgb(215, 215, 215);
+}
+
+.Track-action:active {
+    color: rgb(134, 134, 134);
 }
 
 .Track-information {
@@ -61,4 +69,33 @@
     font-size: .83rem;
     font-weight: 300;
     color: rgba(256, 256, 256, 0.8);
+}
+
+.track-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .media-action {
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0);
+        color: #20d760bf;
+        border: none;
+        opacity: 0;
+
+        margin-top: 15px;
+        text-shadow: 0px 0px 10px black;
+        cursor: pointer;
+        transition: 0.3s ease;
+        filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.25));
+
+        &:hover {
+            color: #20d760;
+        }
+
+        &:active {
+            color: #0e5627;
+        }
+    }
 }

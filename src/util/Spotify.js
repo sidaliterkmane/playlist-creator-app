@@ -47,8 +47,19 @@ const Spotify = {
                     name: track.name,
                     artist: track.artists[0].name,
                     album: track.album.name,
-                    image: track.album.images[2].url,
-                    uri: track.uri
+                    image: track.album.images[0].url,
+                    uri: track.uri,
+                    playsong() {
+                        const accessToken = Spotify.getAccessToken;
+
+                        return fetch(`https://api.spotify.com/v1/me/player/play`,
+                            {
+                                headers: {
+                                    Authorization: `Bearer ${accessToken}`
+                                },
+                                method: 'PUT'
+                            })
+                    }
                 }));
             })
     },
@@ -67,19 +78,19 @@ const Spotify = {
         ).then(jsonResponse => {
             userId = jsonResponse.id;
             return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`,
-            {
-               headers: headers,
-               method: 'POST',
-               body: JSON.stringify({ name: name })
-            }).then(response => response.json()
-            ).then(jsonResponse => {
-                const playlistId = jsonResponse.id;
-                return fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, {
+                {
                     headers: headers,
                     method: 'POST',
-                    body: JSON.stringify({ uris: trackUris })
+                    body: JSON.stringify({ name: name })
+                }).then(response => response.json()
+                ).then(jsonResponse => {
+                    const playlistId = jsonResponse.id;
+                    return fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, {
+                        headers: headers,
+                        method: 'POST',
+                        body: JSON.stringify({ uris: trackUris })
+                    })
                 })
-            })
         });
     }
 };

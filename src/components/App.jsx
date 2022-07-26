@@ -10,7 +10,9 @@ import logo from '../assets/logo.png'
 
 import Spotify from '../util/Spotify';
 import SpotifyLogo from '../assets/spotify.png';
-import github from '../assets/github.svg';
+import { AiFillGithub } from 'react-icons/ai';
+
+const githubIcon = <AiFillGithub size={'35px'} />
 
 class App extends React.Component {
   constructor(props) {
@@ -101,7 +103,7 @@ class App extends React.Component {
           <footer>
             <div className="footer-content">
               <p>Spotilist 2022 - Developed by <a href="https://sidaliterkmane.com" target='_blank'>Sid Ali Terkmane</a></p>
-              <a href="https://github.com/sidaliterkmane/playlist-creator-app"><img src={github} className="git"/></a>
+              <a className='git' target='_blank' href='https://github.com/sidaliterkmane/playlist-creator-app'>{githubIcon}</a>
             </div>
           </footer>
         </div>

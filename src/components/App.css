@@ -106,6 +106,7 @@ h2 {
 footer {
   bottom: 1rem;
   width: 1000px;
+  max-width: 87vw;
   height: 60px;
 }
 
@@ -127,7 +128,15 @@ footer {
   color: rgb(194, 194, 194);
 }
 
-.footer-content img {
-  width: 30px;
-  height: 30px;
+.git {
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+  border: none;
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.git:hover {
+  color: gray;
 }
