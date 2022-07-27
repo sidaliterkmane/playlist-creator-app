@@ -48,18 +48,7 @@ const Spotify = {
                     artist: track.artists[0].name,
                     album: track.album.name,
                     image: track.album.images[0].url,
-                    uri: track.uri,
-                    playsong() {
-                        const accessToken = Spotify.getAccessToken;
-
-                        return fetch(`https://api.spotify.com/v1/me/player/play`,
-                            {
-                                headers: {
-                                    Authorization: `Bearer ${accessToken}`
-                                },
-                                method: 'PUT'
-                            })
-                    }
+                    uri: track.uri
                 }));
             })
     },

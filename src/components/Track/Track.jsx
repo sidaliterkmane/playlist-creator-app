@@ -17,7 +17,8 @@ class Track extends React.Component {
     super(props);
 
     this.state = {
-      media: playIcon
+      media: playIcon,
+      isPlaying: false
     }
 
     this.addTrack = this.addTrack.bind(this);
@@ -48,6 +49,16 @@ class Track extends React.Component {
 
   removeTrack() {
     this.props.onRemove(this.props.track)
+  }
+
+  componentDidMount() {
+    fetch('https://api.spotify.com/v1/me/player/play'
+    ).then(res => res.json()
+    ).then(json => {
+      this.setState({
+        isPlaying: true
+      })
+    })
   }
 
   render() {
